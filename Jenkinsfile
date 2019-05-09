@@ -4,4 +4,5 @@ pipeline {
         steps {
             sh(script: './gradlew chrome --info', returnStatus: true)
         }
+    }
 }
