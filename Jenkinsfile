@@ -1,10 +1,7 @@
-node {
-    stage 'Build'{
-    println 'Compiling....'
-    sh './gradlew build'
+pipeline {
+    agent any
+    stage('UI::Firefox') {
+        steps {
+            sh(script: './gradlew chrome --info', returnStatus: true)
+        }
 }
-    stage 'Test'{
-    println 'Testing....'
-    sh './gradlew clean chrome'}
-}
-
