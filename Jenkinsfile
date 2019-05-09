@@ -1,9 +1,9 @@
 node {
     stage 'Compile'
     println 'Compiling....'
-    sh './gradlew compileJava
+    sh './gradlew compileJava'
 
     stage 'Test'
     println 'Testing....'
-    sh './gradlew clean chrome
+    sh './gradlew clean chrome'
 }
