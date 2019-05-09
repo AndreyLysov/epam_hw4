@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('UI::Firefox') {
             steps {
-                sh(script: './gradlew chrome --info', returnStatus: true)
+                sh(script: './gradlew chrome', returnStatus: true)
             }
         }
     }
