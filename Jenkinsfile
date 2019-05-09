@@ -1,7 +1,7 @@
 node {
     stage 'Compile'
     println 'Compiling....'
-    compileJava
+    build
 
     stage 'Test'
     println 'Testing....'
