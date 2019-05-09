@@ -1,7 +1,7 @@
 node {
-    stage 'Compile'{
+    stage 'Build'{
     println 'Compiling....'
-    sh './gradlew compileJava'
+    sh './gradlew build'
 }
     stage 'Test'{
     println 'Testing....'
