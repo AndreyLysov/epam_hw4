@@ -1,8 +1,7 @@
 pipeline {
-    agent {
-//        your Jenkins slave node name
-        label 'selenium'
-    }
+
+    agent any
+
     stages {
         stage('FW:Compile') {
             steps {
