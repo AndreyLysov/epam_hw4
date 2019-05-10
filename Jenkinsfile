@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('FW:Compile') {
             steps {
-                sh(script: './gradlew clean')
-                sh(script: './gradlew build')
+                bat(script: './gradlew clean')
+                bat(script: './gradlew build')
             }
         }
     }
