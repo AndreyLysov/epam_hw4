@@ -1,9 +1,13 @@
 pipeline {
-    agent any
+    agent {
+//        your Jenkins slave node name
+        label 'selenium'
+    }
     stages {
-        stage('UI::Firefox') {
+        stage('FW:Compile') {
             steps {
-                sh(script: './gradlew chrome', returnStatus: true)
+                sh(script: './gradlew clean')
+                sh(script: './gradlew build')
             }
         }
     }
