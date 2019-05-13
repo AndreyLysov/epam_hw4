@@ -4,8 +4,8 @@ pipeline {
 
     stages {
         stage('FW:Compile') {
-            echo 'Compiling....'
             steps {
+                echo 'Compiling....'
                 bat(script: './gradlew clean')
                 bat(script: './gradlew build')
             }
