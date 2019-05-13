@@ -10,7 +10,6 @@ pipeline {
             }
         }
         stage('Test') {
-            echo 'Testing'
             steps {
                 bat(script: './gradlew chrome')
             }
