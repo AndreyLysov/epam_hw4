@@ -8,8 +8,12 @@ pipeline {
             steps {
                 bat(script: './gradlew clean')
                 bat(script: './gradlew build')
-                bat(script: './gradlew chrome')
             }
+        }
+        stage('Test')
+        echo 'Testing'
+        steps{
+            bat(script: './gradlew chrome')
         }
     }
 }
