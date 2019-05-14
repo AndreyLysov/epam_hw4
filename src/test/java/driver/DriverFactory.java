@@ -1,12 +1,12 @@
 package driver;
 
+import com.sun.javafx.runtime.SystemProperties;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.sun.javafx.runtime.SystemProperties.getProperty;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.openqa.selenium.Platform.LINUX;
 
@@ -17,9 +17,8 @@ public class DriverFactory {
 
 	public static RemoteWebDriver getDriver() {
 		if (driver == null) {
-			System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
 			DesiredCapabilities caps = new DesiredCapabilities();
-			caps.setBrowserName(getProperty("browser"));
+			caps.setBrowserName(System.getProperty("browser"));
 			caps.setPlatform(LINUX);
 			caps.setVersion("57.0");
 			caps.setCapability("enableVNC", true);
