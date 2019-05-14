@@ -23,7 +23,7 @@ dependencies {
 }
 
 task chrome(type: Test) {
-    systemProperty "browser", "googlechrome"
+    systemProperty "browser", "chrome"
     useJUnit()
 }
 

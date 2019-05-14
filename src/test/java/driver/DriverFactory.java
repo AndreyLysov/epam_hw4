@@ -1,6 +1,5 @@
 package driver;
 
-import com.sun.javafx.runtime.SystemProperties;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
