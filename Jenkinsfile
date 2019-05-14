@@ -18,9 +18,9 @@ pipeline {
 }
 
 void browsers(){
-    def browsers = {"chrome"; "firefox"}
-    browsers.each{
-        echo "test $it"
-        bat(script: "./gradlew $it")
+    List<String> browsers = {"chrome"; "firefox"}
+    browsers.stream(){s ->
+        echo "test $s"
+        bat(script: "./gradlew $s")
     }
 }
