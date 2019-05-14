@@ -3,17 +3,22 @@ pipeline {
     agent any
 
     stages {
-        stage('FW:Compile') {
+        stage('Test::Firefox') {
             steps {
-                echo 'Compiling...'
-                bat(script: './gradlew clean')
-//                bat(script: './gradlew compileJava')
+                step{
+                    echo 'Cleaning...'
+                    bat(script: './gradlew clean')
+                }
+                step{
+                    echo 'Testing...'
+                    bat(script: './gradlew chrome')
+                }
             }
-        }
+        }/*
         stage('Test') {
             steps {
                 bat(script: './gradlew chrome')
             }
-        }
+        }*/
     }
 }
