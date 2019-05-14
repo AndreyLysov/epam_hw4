@@ -11,16 +11,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                browsers()
-            }
+                echo "test chrome"
+                bat(script: "./gradlew chrome")            }
         }
-    }
-}
-
-void browsers(){
-    List<String> browsers = {"chrome"; "firefox"}
-    browsers.stream(){s ->
-        echo "test $s"
-        bat(script: "./gradlew $s")
     }
 }
