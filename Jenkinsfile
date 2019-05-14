@@ -11,9 +11,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing'
-                bat(script: './gradlew chrome')
+                browsers()
             }
         }
+    }
+}
+
+browsers(){
+    def browsers = {"chrome"; "firefox"}
+    browsers.each{
+        echo "test $it"
+        bat(script: "./gradlew $it")
     }
 }
