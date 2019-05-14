@@ -10,6 +10,7 @@ public class SearchPageStepdefs extends SearchPage {
 
 	@Then("^Search result is displayed$")
 	public void search_result_is_displayed() {
+
 		assertFalse("Search results are not displayed",
 					searchResultIsPresent());
 	}
