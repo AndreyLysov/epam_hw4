@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Test::Firefox') {
+        stage('Clean') {
             steps {
                 echo 'Cleaning...'
                 bat(script: './gradlew clean')
