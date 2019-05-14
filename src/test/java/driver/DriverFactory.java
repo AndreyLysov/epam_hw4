@@ -1,20 +1,14 @@
 package driver;
 
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
-import static java.util.concurrent.TimeUnit.*;
-import static org.openqa.selenium.Platform.*;
-import static org.openqa.selenium.remote.BrowserType.*;
+import static com.sun.javafx.runtime.SystemProperties.getProperty;
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.openqa.selenium.Platform.LINUX;
 
 
 public class DriverFactory {
@@ -25,7 +19,7 @@ public class DriverFactory {
 		if (driver == null) {
 			System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
 			DesiredCapabilities caps = new DesiredCapabilities();
-			caps.setBrowserName(FIREFOX);
+			caps.setBrowserName(getProperty("browser"));
 			caps.setPlatform(LINUX);
 			caps.setVersion("57.0");
 			caps.setCapability("enableVNC", true);

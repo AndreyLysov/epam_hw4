@@ -23,5 +23,12 @@ dependencies {
 }
 
 task chrome(type: Test) {
+    systemProperty 'browser', 'googlechrome'
     useJUnit()
 }
+
+task firefox(type: Test) {
+    systemProperty 'browser', 'firefox'
+    useJUnit()
+}
+
