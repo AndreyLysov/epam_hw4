@@ -17,7 +17,7 @@ pipeline {
     }
 }
 
-browsers(){
+void browsers(){
     def browsers = {"chrome"; "firefox"}
     browsers.each{
         echo "test $it"
